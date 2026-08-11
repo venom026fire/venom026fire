@@ -1,11 +1,22 @@
-
 CREDITS
 
-Pipeline HTML CSS Template
-http://www.templatemo.com/tm-498-stimulus
+Built with Vite, React, TypeScript & React Router
+https://vitejs.dev / https://react.dev / https://reactrouter.com
 
-Bootstrap
-http://getbootstrap.com/
+Tailwind CSS
+https://tailwindcss.com
 
-Images
-http://startupstockphotos.com/
+Framer Motion
+https://www.framer.com/motion/
+
+Three.js, React Three Fiber & Drei (3D scene)
+https://threejs.org / https://docs.pmnd.rs/react-three-fiber
+
+Lucide Icons
+https://lucide.dev
+
+Fonts: Inter, Sora & JetBrains Mono (Google Fonts)
+https://fonts.google.com
+
+Portrait & workstation photography
+Prithijit Majumder, personal collection
