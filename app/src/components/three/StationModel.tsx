@@ -1,43 +1,7 @@
-import { Edges, Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import type * as THREE from "three";
-
-const GOLD = "#D6A756";
-const CYAN = "#4CC9E8";
-
-function Tag({ children, color = CYAN }: { children: string; color?: string }) {
-  return (
-    <Html transform sprite distanceFactor={9} zIndexRange={[10, 0]}>
-      <div
-        className="whitespace-nowrap rounded-full border px-2 py-0.5 font-mono text-[9px] tracking-wide backdrop-blur-sm"
-        style={{ borderColor: `${color}66`, color, background: "rgba(10,14,23,0.75)" }}
-      >
-        {children}
-      </div>
-    </Html>
-  );
-}
-
-function Beam({
-  position,
-  args,
-  color = CYAN,
-  opacity = 0.05,
-}: {
-  position: [number, number, number];
-  args: [number, number, number];
-  color?: string;
-  opacity?: number;
-}) {
-  return (
-    <mesh position={position}>
-      <boxGeometry args={args} />
-      <meshBasicMaterial color={color} transparent opacity={opacity} />
-      <Edges scale={1} color={color} />
-    </mesh>
-  );
-}
+import { Beam, CYAN, GOLD, Tag } from "./primitives";
 
 const COLUMN_XS = [-3.2, -1.6, 0, 1.6, 3.2];
 

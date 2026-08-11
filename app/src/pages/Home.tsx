@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import CTABanner from "../components/CTABanner";
 import ProjectCard from "../components/ProjectCard";
 import QuoteBlock from "../components/QuoteBlock";
-import SceneCanvas from "../components/three/SceneCanvas";
+import LazyScene from "../components/three/LazyScene";
 import CornerFrame from "../components/ui/CornerFrame";
 import DimensionDivider from "../components/ui/DimensionDivider";
 import Reveal from "../components/ui/Reveal";
@@ -89,7 +89,11 @@ export default function Home() {
           >
             <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-gold-500/20 via-transparent to-blue-500/20 blur-2xl" />
             <CornerFrame className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-ink-800 shadow-glow">
-              <SceneCanvas className="aspect-[4/5] w-full" />
+              <LazyScene
+                loader={() => import("../components/three/BlueprintScene")}
+                className="aspect-[4/5] w-full"
+                label="Loading station model…"
+              />
               <div className="absolute inset-x-0 top-0 flex items-center justify-between p-4">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink-900/70 px-2.5 py-1 font-mono text-[10px] text-mist-400">
                   <Move3d size={12} className="text-blue-400" />

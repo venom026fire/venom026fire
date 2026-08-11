@@ -1,6 +1,10 @@
-import { BarChart3, Compass, GitMerge, PenTool } from "lucide-react";
+import { BarChart3, Compass, GitMerge, Move3d, PenTool } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import CTABanner from "../components/CTABanner";
+import LazyScene from "../components/three/LazyScene";
+import CornerFrame from "../components/ui/CornerFrame";
+import DimensionDivider from "../components/ui/DimensionDivider";
 import PageHeader from "../components/ui/PageHeader";
 import Reveal from "../components/ui/Reveal";
 import { skillGroups } from "../data/content";
@@ -8,6 +12,8 @@ import { skillGroups } from "../data/content";
 const GROUP_ICONS = [Compass, PenTool, GitMerge, BarChart3];
 
 export default function Skills() {
+  const [resolved, setResolved] = useState(false);
+
   return (
     <>
       <PageHeader
@@ -17,8 +23,50 @@ export default function Skills() {
         description="Self-rated out of 10, grouped by where each tool sits in the BIM pipeline — from authoring through coordination to delivery analytics."
       />
 
+      <section className="pb-16">
+        <div className="container-page">
+          <DimensionDivider label="Coordination in practice" />
+
+          <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <Reveal>
+              <CornerFrame tone="blue" className="relative overflow-hidden rounded-2xl border border-white/10 bg-ink-800 shadow-glow">
+                <LazyScene
+                  loader={() => import("../components/three/ClashScene")}
+                  sceneProps={{ resolved }}
+                  className="aspect-[16/10] w-full"
+                  label="Loading clash model…"
+                />
+                <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink-900/70 px-2.5 py-1 font-mono text-[10px] text-mist-400">
+                  <Move3d size={12} className="text-blue-400" />
+                  Drag to rotate
+                </span>
+              </CornerFrame>
+            </Reveal>
+
+            <Reveal delay={0.08}>
+              <h2 className="font-display text-xl font-semibold text-mist-100">
+                A duct running straight through a column — the daily reality of clash detection.
+              </h2>
+              <p className="mt-3 leading-relaxed text-mist-400">
+                Navisworks flags the intersection, the discipline teams get a coordinated report, and the
+                model is adjusted before it ever reaches site. Toggle it below.
+              </p>
+              <button
+                type="button"
+                onClick={() => setResolved((v) => !v)}
+                className={resolved ? "btn-ghost mt-6" : "btn-primary mt-6"}
+              >
+                {resolved ? "Reintroduce clash" : "Resolve clash"}
+              </button>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       <section className="pb-24">
         <div className="container-page space-y-14">
+          <DimensionDivider label="Full toolkit" />
+
           {skillGroups.map((group, gi) => {
             const Icon = GROUP_ICONS[gi] ?? Compass;
             return (

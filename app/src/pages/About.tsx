@@ -1,5 +1,7 @@
-import { Award, Boxes, CheckCheck, GraduationCap, Landmark, Layers, MapPin } from "lucide-react";
+import { Award, Boxes, CheckCheck, GraduationCap, Landmark, Layers, MapPin, Move3d } from "lucide-react";
+import { useState } from "react";
 import CTABanner from "../components/CTABanner";
+import LazyScene from "../components/three/LazyScene";
 import CornerFrame from "../components/ui/CornerFrame";
 import DimensionDivider from "../components/ui/DimensionDivider";
 import PageHeader from "../components/ui/PageHeader";
@@ -11,6 +13,8 @@ const ICONS = { boxes: Boxes, landmark: Landmark, layers: Layers, "check-check":
 const EDU_ICONS = [GraduationCap, Award];
 
 export default function About() {
+  const [stage, setStage] = useState(0);
+
   return (
     <>
       <PageHeader
@@ -77,15 +81,40 @@ export default function About() {
           <Reveal className="mx-auto mt-4 max-w-2xl text-center">
             <p className="text-mist-400">
               Every project moves through the same five gates — the vocabulary that shows up across almost
-              every project on this site.
+              every project on this site. Click a stage to see it build up on the model.
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-5">
+          <Reveal delay={0.05} className="mt-10">
+            <CornerFrame tone="blue" className="relative overflow-hidden rounded-2xl border border-white/10 bg-ink-800 shadow-glow">
+              <LazyScene
+                loader={() => import("../components/three/LODScene")}
+                sceneProps={{ stage }}
+                className="aspect-[16/8] w-full sm:aspect-[16/6]"
+                label="Loading LOD model…"
+              />
+              <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink-900/70 px-2.5 py-1 font-mono text-[10px] text-mist-400">
+                <Move3d size={12} className="text-blue-400" />
+                Drag to rotate
+              </span>
+            </CornerFrame>
+          </Reveal>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-5">
             {process.map((step, i) => (
               <Reveal key={step.stage} delay={i * 0.06}>
-                <div className="card relative h-full p-5">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blue-400">
+                <button
+                  type="button"
+                  onClick={() => setStage(i)}
+                  className={`card relative h-full w-full p-5 text-left transition-colors ${
+                    stage === i ? "border-gold-500/50 bg-white/[0.04]" : "hover:border-white/20"
+                  }`}
+                >
+                  <span
+                    className={`font-mono text-[10px] uppercase tracking-[0.2em] ${
+                      stage === i ? "text-gold-500" : "text-blue-400"
+                    }`}
+                  >
                     {step.stage}
                   </span>
                   <h3 className="mt-2 font-display text-sm font-semibold text-mist-100">{step.label}</h3>
@@ -93,7 +122,7 @@ export default function About() {
                   {i < process.length - 1 && (
                     <span className="absolute -right-3 top-1/2 hidden h-px w-6 -translate-y-1/2 bg-gradient-to-r from-mist-500/40 to-transparent sm:block" />
                   )}
-                </div>
+                </button>
               </Reveal>
             ))}
           </div>

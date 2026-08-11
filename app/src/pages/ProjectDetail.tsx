@@ -1,7 +1,8 @@
-import { ArrowLeft, MapPin } from "lucide-react";
+import { ArrowLeft, MapPin, Move3d } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import CTABanner from "../components/CTABanner";
 import ProjectCard from "../components/ProjectCard";
+import LazyScene from "../components/three/LazyScene";
 import CornerFrame from "../components/ui/CornerFrame";
 import DimensionDivider from "../components/ui/DimensionDivider";
 import Reveal from "../components/ui/Reveal";
@@ -42,7 +43,25 @@ export default function ProjectDetail() {
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+          <Reveal delay={0.05} className="mt-10">
+            <CornerFrame tone="blue" className="relative overflow-hidden rounded-2xl border border-white/10 bg-ink-800 shadow-glow">
+              <LazyScene
+                loader={() => import("../components/three/CategoryScene")}
+                sceneProps={{ category: project.category }}
+                className="aspect-[16/7] w-full sm:aspect-[16/5]"
+                label="Loading category model…"
+              />
+              <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink-900/70 px-2.5 py-1 font-mono text-[10px] text-mist-400">
+                <Move3d size={12} className="text-blue-400" />
+                Drag to rotate
+              </span>
+              <span className="absolute bottom-4 right-4 rounded-full border border-white/10 bg-ink-900/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-mist-500">
+                Illustrative — {project.category}
+              </span>
+            </CornerFrame>
+          </Reveal>
+
+          <div className="mt-10 grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <Reveal delay={0.05}>
               <CornerFrame className="card p-6 sm:p-8">
                 <h2 className="font-display text-lg font-semibold text-mist-100">Brief</h2>
