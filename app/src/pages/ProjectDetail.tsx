@@ -1,4 +1,4 @@
-import { ArrowLeft, MapPin, Move3d } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, MapPin, Move3d, Sparkles } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import CTABanner from "../components/CTABanner";
 import ProjectCard from "../components/ProjectCard";
@@ -28,14 +28,23 @@ export default function ProjectDetail() {
               All projects
             </Link>
 
-            <div className="mt-6 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-gold-500">
+            <div className="mt-6 flex flex-wrap items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-gold-500">
               <span className="rounded border border-gold-500/40 px-2 py-1">Project</span>
               <span>{project.category}</span>
+              {project.status === "ongoing" && (
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-gold-500/15 px-2.5 py-1 text-[11px] normal-case tracking-normal text-gold-400">
+                  <Sparkles size={11} className="animate-pulse" />
+                  In Progress
+                </span>
+              )}
             </div>
 
             <h1 className="mt-5 font-display text-3xl font-bold leading-tight text-mist-100 sm:text-4xl lg:text-5xl">
               {project.name}
             </h1>
+            {project.formerName && (
+              <p className="mt-1 text-sm text-mist-500">Formerly the {project.formerName}</p>
+            )}
             <p className="mt-3 text-lg font-medium text-gold-500">{project.credit}</p>
             <p className="mt-1 inline-flex items-center gap-1.5 text-sm text-mist-400">
               <MapPin size={14} />
@@ -45,18 +54,29 @@ export default function ProjectDetail() {
 
           <Reveal delay={0.05} className="mt-10">
             <CornerFrame tone="blue" className="relative overflow-hidden rounded-2xl border border-white/10 bg-ink-800 shadow-glow">
-              <LazyScene
-                loader={() => import("../components/three/CategoryScene")}
-                sceneProps={{ category: project.category }}
-                className="aspect-[16/7] w-full sm:aspect-[16/5]"
-                label="Loading category model…"
-              />
-              <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink-900/70 px-2.5 py-1 font-mono text-[10px] text-mist-400">
-                <Move3d size={12} className="text-blue-400" />
-                Drag to rotate
-              </span>
+              {project.coverImage ? (
+                <img
+                  src={project.coverImage}
+                  alt={project.name}
+                  className="aspect-[16/7] w-full object-cover sm:aspect-[16/5]"
+                  loading="lazy"
+                />
+              ) : (
+                <LazyScene
+                  loader={() => import("../components/three/CategoryScene")}
+                  sceneProps={{ category: project.category }}
+                  className="aspect-[16/7] w-full sm:aspect-[16/5]"
+                  label="Loading category model…"
+                />
+              )}
+              {!project.coverImage && (
+                <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-ink-900/70 px-2.5 py-1 font-mono text-[10px] text-mist-400">
+                  <Move3d size={12} className="text-blue-400" />
+                  Drag to rotate
+                </span>
+              )}
               <span className="absolute bottom-4 right-4 rounded-full border border-white/10 bg-ink-900/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.15em] text-mist-500">
-                Illustrative — {project.category}
+                {project.coverImage ? project.renderCredit ?? "Architectural visualization" : `Illustrative — ${project.category}`}
               </span>
             </CornerFrame>
           </Reveal>
@@ -86,6 +106,64 @@ export default function ProjectDetail() {
           </div>
         </div>
       </div>
+
+      {project.subBuildings && project.subBuildings.length > 0 && (
+        <section className="pb-20">
+          <div className="container-page">
+            <DimensionDivider label="Project components" />
+
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {project.subBuildings.map((building, i) => (
+                <Reveal key={building.name} delay={Math.min(i, 5) * 0.05}>
+                  <div className="card h-full overflow-hidden">
+                    {building.images && building.images.length > 0 && (
+                      <div
+                        className={`grid gap-0.5 ${building.images.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}
+                      >
+                        {building.images.slice(0, 4).map((src, imgI) => (
+                          <img
+                            key={imgI}
+                            src={src}
+                            alt={`${building.name} — visualization ${imgI + 1}`}
+                            className="aspect-[4/3] w-full object-cover"
+                            loading="lazy"
+                          />
+                        ))}
+                      </div>
+                    )}
+                    <div className="p-5">
+                      <h3 className="font-display text-base font-semibold text-mist-100">{building.name}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-mist-400">{building.description}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {project.sources && project.sources.length > 0 && (
+        <section className="pb-20">
+          <div className="container-page">
+            <DimensionDivider label="Further reading" />
+            <Reveal className="mt-8 grid gap-3 sm:grid-cols-2">
+              {project.sources.map((source) => (
+                <a
+                  key={source.href}
+                  href={source.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="card flex items-center justify-between gap-3 p-4 text-sm text-mist-300 transition hover:border-gold-500/30 hover:text-mist-100"
+                >
+                  {source.label}
+                  <ArrowUpRight size={15} className="shrink-0 text-mist-500" />
+                </a>
+              ))}
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="pb-20">

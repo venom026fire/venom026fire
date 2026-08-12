@@ -1,3 +1,14 @@
+import occAerial from "../assets/occ/aerial-view.webp";
+import occAerial2 from "../assets/occ/aerial-view-2.webp";
+import occArchives from "../assets/occ/archives.webp";
+import occAuditorium from "../assets/occ/auditorium.webp";
+import occCinema from "../assets/occ/cinema.webp";
+import occFlexibleTheatre from "../assets/occ/flexible-theatre.webp";
+import occLibrary from "../assets/occ/library.webp";
+import occPlaza01 from "../assets/occ/plaza-01.webp";
+import occPlaza02 from "../assets/occ/plaza-02.webp";
+import occTheatreFoyer from "../assets/occ/theatre-foyer.webp";
+
 export const navLinks = [
   { path: "/", label: "Home", code: "00" },
   { path: "/about", label: "About", code: "01" },
@@ -10,12 +21,12 @@ export const navLinks = [
 export const profile = {
   name: "Prithijit Majumder",
   initials: "PM",
-  role: "BIM Manager & Virtual Design–Construction Specialist",
+  role: "Lead BIM Manager & Virtual Design–Construction Specialist",
   tagline:
     "Streamlining BIM processes across design consultancies and on-site construction — from concept to as-built, on four continents.",
   yearsExperience: "15+",
   location: "Muscat, Oman",
-  secondaryLocation: "Kolkata, India",
+  hometown: "Kharagpur, West Bengal, India",
   basedCountries: ["India", "Saudi Arabia", "Thailand", "Singapore", "Oman"],
   email: "info@prithijit.com",
   phones: [
@@ -23,8 +34,8 @@ export const profile = {
     { label: "India", number: "+91 89102 59729", href: "tel:+918910259729" },
   ],
   domain: "prithijit.com",
-  resumeFile: "/files/Prithijit_Majumder_Resume.pdf",
-  portfolioFile: "/files/Professional_Projects_Portfolio.pdf",
+  resumeFile: "/files/resume.pdf",
+  portfolioFile: "/files/professional-projects-portfolio.pdf",
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/prithijitmajumder/", icon: "linkedin" },
     { label: "X", href: "https://x.com/venom_026", icon: "twitter" },
@@ -35,7 +46,7 @@ export const profile = {
 };
 
 export const bio = [
-  "Prithijit began his career as an architect in Kolkata and Bangalore before moving into BIM leadership in 2013. Since then, he has directed model delivery, clash resolution and digital-twin workflows for metro systems, airports, nuclear power stations and heritage restorations — working from India, Saudi Arabia, Thailand and Singapore to his current base in Muscat.",
+  "Prithijit grew up in Kharagpur, West Bengal, and began his career as an architect in Kolkata and Bangalore before moving into BIM leadership in 2013. Since then, he has directed model delivery, clash resolution and digital-twin workflows for metro systems, airports, nuclear power stations and heritage restorations — working from India, Saudi Arabia, Thailand and Singapore to his current base in Muscat.",
   "As a Contractual Technical Consultant with Autodesk Consulting, he implemented BIM-integrated solutions for a real-estate developer in Bangkok and the Singapore Metro Line Extension for the Land Transport Authority — leading teams of 200+ specialists across multiple countries. At his peak, he has directed distributed modelling teams of over 300 people spanning six countries on a single tower.",
   "His approach treats BIM as a coordination discipline first and a software discipline second: standards and LOD targets are agreed before a single wall is modelled, clash reports drive weekly discipline sync-ups rather than end-of-phase surprises, and every model is built with the next lifecycle stage — construction, then facility management — already in mind.",
 ];
@@ -107,13 +118,14 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    title: "BIM Manager",
+    title: "Lead BIM Manager",
     company: "Dar Al-Handasah",
     location: "Muscat, Oman",
     period: "Feb 2025 — Present",
-    duration: "current",
+    duration: "1 yr 10 mos",
     current: true,
     bullets: [
+      "Deputed client-side to Oman's Ministry of Culture, Sports & Youth as Client BIM Manager for the Sayyid Tarik bin Taimur Cultural Complex.",
       "Streamlining BIM processes across design consultancy workflows and on-site construction delivery.",
     ],
   },
@@ -197,12 +209,20 @@ export const experience: ExperienceItem[] = [
   },
 ];
 
+export type SubBuilding = {
+  name: string;
+  description: string;
+  images?: string[];
+};
+
 export type Project = {
   slug: string;
   name: string;
+  formerName?: string;
   credit: string;
   location: string;
   category: string;
+  status?: "ongoing" | "completed";
   summary: string;
   description: string;
   role?: string;
@@ -211,6 +231,10 @@ export type Project = {
   team?: string;
   tools?: string;
   featured?: boolean;
+  coverImage?: string;
+  renderCredit?: string;
+  subBuildings?: SubBuilding[];
+  sources?: { label: string; href: string }[];
 };
 
 export const projectCategories = [
@@ -225,6 +249,82 @@ export const projectCategories = [
 ];
 
 export const projects: Project[] = [
+  {
+    slug: "sayyid-tarik-bin-taimur-cultural-complex",
+    name: "Sayyid Tarik bin Taimur Cultural Complex",
+    formerName: "Oman Cultural Complex",
+    credit: "Ministry of Culture, Sports & Youth, Oman",
+    location: "Muscat, Oman",
+    category: "Cultural & Landmark",
+    status: "ongoing",
+    summary:
+      "A 400,000 sqm national cultural landmark — theatre, library, archive and civic plaza — under construction opposite Muscat International Airport.",
+    description:
+      "Currently his flagship assignment: a national cultural landmark commissioned by Oman's Ministry of Culture, Sports & Youth on a 400,000 sqm site at Airport Heights, Muscat, with roughly 80,200 sqm of built-up area. Renamed by royal order from the Oman Cultural Complex to honour Sayyid Tarik bin Taimur — Oman's first Prime Minister during the Renaissance era — the complex is designed around a steel canopy inspired by Omani mashrabiya screens, echoing the surrounding dunes and coastline. As Client BIM Manager deputed to the Ministry, Prithijit manages, implements and delivers BIM models for the site's asset buildings from RIBA Stage 3 (LOD 200, Schematic Design) through RIBA Stage 6 (LOD 500, As-Built), alongside 4D construction sequencing, 5D quantification, 7D asset information management and Digital Twin integration.",
+    role: "Client BIM Manager, deputed to the Ministry of Culture, Sports & Youth",
+    scale: "400,000 sqm site · ~80,200 sqm built-up area · 6 asset-building groups",
+    lod: "RIBA Stage 3 (LOD 200) → RIBA Stage 6 (LOD 500 As-Built)",
+    tools: "4D sequencing · 5D quantification · 7D AIM · Digital Twin integration",
+    featured: true,
+    coverImage: occAerial,
+    renderCredit: "Architectural visualization — project design team",
+    subBuildings: [
+      {
+        name: "National Theatre",
+        description:
+          "A 1,000-seat main auditorium alongside a 250–300 seat experimental theatre, a 250-seat cinema hall and 25+ dressing and rehearsal spaces, built around advanced stage, sound and lighting systems with VR/AR-driven audience enhancements.",
+        images: [occAuditorium, occTheatreFoyer, occCinema, occFlexibleTheatre],
+      },
+      {
+        name: "National Library",
+        description:
+          "A five-storey research and literary hub with reading rooms, a children's library, exhibition space for rare manuscripts, and dedicated IT and lecture halls.",
+        images: [occLibrary],
+      },
+      {
+        name: "National Archive",
+        description:
+          "A four-storey, 15,300 sqm facility holding roughly 20 km of archival shelving, with conservation workshops, public reading rooms and climate-controlled manuscript storage.",
+        images: [occArchives],
+      },
+      {
+        name: "Central Plaza & Facility Buildings",
+        description:
+          "A mashrabiya-canopied civic space with water features and over 2,000 trees, tying the theatre, library and archive together with cafés and space for public exhibitions and festivals.",
+        images: [occPlaza01, occPlaza02],
+      },
+      {
+        name: "Energy Building & Data Center",
+        description:
+          "Powers and secures the complex's operations — backup utilities, a high-security data center, and the connectivity backbone for the site's Digital Twin and smart facility-management systems.",
+        images: [],
+      },
+      {
+        name: "Landscape & Infrastructure",
+        description:
+          "External public space threaded with dry and wet falaj water channels, lawns and tree plantations, plus multiple parking zones — built to host public events such as Muscat Nights.",
+        images: [occAerial2],
+      },
+    ],
+    sources: [
+      {
+        label: "Oman Observer — All you need to know about the complex",
+        href: "https://www.omanobserver.om/article/1148508/oman/tourism/all-you-need-to-know-about-oman-cultural-complex",
+      },
+      {
+        label: "Oman Observer — HM names the complex after Sayyid Tarik bin Taimur",
+        href: "https://www.omanobserver.om/article/1180000/oman/his-majesty/hm-names-oman-cultural-complex-after-sayyid-tarik-bin-taimur",
+      },
+      {
+        label: "Ministry of Heritage & Tourism — official project page",
+        href: "https://www.fm.gov.om/en/992/",
+      },
+      {
+        label: "The Arabian Stories — construction progress, May 2026",
+        href: "https://www.thearabianstories.com/2026/05/24/sayyid-tarik-cultural-complex-reaches-49-completion-as-oman-unveils-900-cultural-projects/",
+      },
+    ],
+  },
   {
     slug: "neom-oxagon-port-city",
     name: "NEOM Oxagon Port City",
@@ -461,6 +561,7 @@ export const skillGroups = [
   {
     title: "Authoring & Modelling",
     skills: [
+      { name: "Autodesk Forma", level: 10 },
       { name: "Autodesk Revit", level: 9 },
       { name: "Autodesk FormIt", level: 6 },
       { name: "Autodesk 3ds Max", level: 5 },
@@ -469,9 +570,8 @@ export const skillGroups = [
     ],
   },
   {
-    title: "Coordination, Clash & Reality Capture",
+    title: "Coordination & Reality Capture",
     skills: [
-      { name: "Autodesk BIM 360", level: 10 },
       { name: "Autodesk Navisworks", level: 9 },
       { name: "Autodesk ReCap", level: 7 },
     ],

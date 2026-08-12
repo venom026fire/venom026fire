@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Download, MapPin, Move3d } from "lucide-react";
+import { ArrowRight, Download, MapPin, Move3d, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import CTABanner from "../components/CTABanner";
 import ProjectCard from "../components/ProjectCard";
@@ -14,7 +14,7 @@ import { experience, profile, projects } from "../data/content";
 
 const HERO_STATS = [
   { value: 15, suffix: "+", label: "Years in BIM & VDC" },
-  { value: 19, suffix: "", label: "Landmark projects" },
+  { value: projects.length, suffix: "", label: "Landmark projects" },
   { value: 5, suffix: "", label: "Countries based in" },
 ];
 
@@ -25,7 +25,8 @@ const GLANCE_STATS = [
   { value: 500, suffix: "", label: "Deepest LOD delivered", description: "As-built, from LiDAR scan data" },
 ];
 
-const featured = projects.filter((p) => p.featured).slice(0, 4);
+const spotlight = projects.find((p) => p.status === "ongoing");
+const featured = projects.filter((p) => p.featured && p.status !== "ongoing").slice(0, 4);
 
 export default function Home() {
   return (
@@ -53,7 +54,7 @@ export default function Home() {
             <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-mist-400">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5">
                 <MapPin size={14} className="text-gold-500" />
-                {profile.location} · {profile.secondaryLocation}
+                Based in {profile.location}
               </span>
             </div>
 
@@ -107,6 +108,50 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {spotlight && (
+        <section className="py-16 sm:py-20">
+          <div className="container-page">
+            <DimensionDivider label="Current project" />
+
+            <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+              <Reveal>
+                <CornerFrame tone="gold" className="overflow-hidden rounded-2xl border border-white/10 shadow-glow">
+                  {spotlight.coverImage && (
+                    <img
+                      src={spotlight.coverImage}
+                      alt={spotlight.name}
+                      className="aspect-[16/10] w-full object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                </CornerFrame>
+                {spotlight.renderCredit && (
+                  <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-mist-500">
+                    {spotlight.renderCredit}
+                  </p>
+                )}
+              </Reveal>
+
+              <Reveal delay={0.1}>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-gold-500/15 px-3 py-1 text-xs font-semibold text-gold-400">
+                  <Sparkles size={12} className="animate-pulse" />
+                  In Progress
+                </span>
+                <h2 className="section-heading mt-4">{spotlight.name}</h2>
+                {spotlight.formerName && (
+                  <p className="mt-1 text-sm text-mist-500">Formerly the {spotlight.formerName}</p>
+                )}
+                <p className="mt-4 leading-relaxed text-mist-300">{spotlight.summary}</p>
+                <Link to={`/projects/${spotlight.slug}`} className="btn-primary mt-6">
+                  View full case study
+                  <ArrowRight size={16} />
+                </Link>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-16 sm:py-20">
         <div className="container-page">
@@ -174,7 +219,7 @@ export default function Home() {
 
           <div className="mt-10 flex justify-center">
             <Link to="/projects" className="btn-ghost">
-              View all 19 projects
+              View all {projects.length} projects
               <ArrowRight size={16} />
             </Link>
           </div>

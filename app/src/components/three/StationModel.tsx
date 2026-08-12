@@ -38,7 +38,7 @@ export default function StationModel({ spin = true }: { spin?: boolean }) {
 
       <Tag color={GOLD}>LOD 350</Tag>
       <group position={[3.4, 2.4, 0]}>
-        <Tag color={CYAN}>BIM 360 · Synced</Tag>
+        <Tag color={CYAN}>Cloud Sync · Live</Tag>
       </group>
       <group position={[-3.6, -1.6, 0.6]}>
         <Tag color={CYAN}>Clash Detected: 0</Tag>

@@ -53,9 +53,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="text-xs text-mist-500">Based in</p>
-                  <p className="text-sm font-medium text-mist-100">
-                    {profile.location} &amp; {profile.secondaryLocation}
-                  </p>
+                  <p className="text-sm font-medium text-mist-100">{profile.location}</p>
                 </div>
               </div>
             </div>

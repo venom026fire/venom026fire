@@ -18,7 +18,7 @@ export default function Projects() {
       <PageHeader
         code="03"
         eyebrow="Selected Work"
-        title="Nineteen projects across five countries and every scale."
+        title={`${projects.length} projects across five countries and every scale.`}
         description="From metro networks and nuclear power stations to heritage forts and landmark towers — filter by discipline, then open a project for the full brief."
       />
 

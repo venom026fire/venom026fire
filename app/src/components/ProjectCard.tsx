@@ -1,4 +1,4 @@
-import { ArrowUpRight, MapPin } from "lucide-react";
+import { ArrowUpRight, MapPin, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import type { Project } from "../data/content";
@@ -13,9 +13,17 @@ export default function ProjectCard({ project }: { project: Project }) {
           className="card group flex h-full flex-col p-5 transition-colors hover:border-gold-500/30"
         >
           <div className="flex items-start justify-between gap-2">
-            <span className="inline-block w-fit rounded-full bg-blue-500/10 px-2.5 py-1 text-[11px] font-medium text-blue-400">
-              {project.category}
-            </span>
+            <div className="flex flex-wrap gap-1.5">
+              <span className="inline-block w-fit rounded-full bg-blue-500/10 px-2.5 py-1 text-[11px] font-medium text-blue-400">
+                {project.category}
+              </span>
+              {project.status === "ongoing" && (
+                <span className="inline-flex w-fit items-center gap-1 rounded-full bg-gold-500/15 px-2.5 py-1 text-[11px] font-medium text-gold-400">
+                  <Sparkles size={11} />
+                  In Progress
+                </span>
+              )}
+            </div>
             <ArrowUpRight
               size={16}
               className="mt-0.5 shrink-0 text-mist-500 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold-500"
