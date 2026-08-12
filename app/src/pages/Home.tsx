@@ -22,7 +22,7 @@ const GLANCE_STATS = [
   { value: experience.length, suffix: "", label: "Roles held", description: "Jr. architect to BIM Manager" },
   { value: 300, suffix: "+", label: "Largest team led", description: "Across 6 countries, one tower" },
   { value: 200, suffix: "+", label: "Team on Singapore Metro", description: "As Technical Consultant" },
-  { value: 500, suffix: "", label: "Deepest LOD delivered", description: "As-built, from LiDAR scan data" },
+  { value: 500, suffix: "", label: "Highest LOD delivered", description: "As-built, from LiDAR scan data" },
 ];
 
 const spotlight = projects.find((p) => p.status === "ongoing");

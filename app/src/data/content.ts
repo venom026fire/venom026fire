@@ -258,7 +258,7 @@ export const projects: Project[] = [
     category: "Cultural & Landmark",
     status: "ongoing",
     summary:
-      "A 400,000 sqm national cultural landmark — theatre, library, archive and civic plaza — under construction opposite Muscat International Airport.",
+      "A 400,000 sqm national cultural landmark — theatre, library, archive and central plaza — under construction opposite Muscat International Airport.",
     description:
       "Currently his flagship assignment: a national cultural landmark commissioned by Oman's Ministry of Culture, Sports & Youth on a 400,000 sqm site at Airport Heights, Muscat, with roughly 80,200 sqm of built-up area. Renamed by royal order from the Oman Cultural Complex to honour Sayyid Tarik bin Taimur — Oman's first Prime Minister during the Renaissance era — the complex is designed around a steel canopy inspired by Omani mashrabiya screens, echoing the surrounding dunes and coastline. As Client BIM Manager deputed to the Ministry, Prithijit manages, implements and delivers BIM models for the site's asset buildings from RIBA Stage 3 (LOD 200, Schematic Design) through RIBA Stage 6 (LOD 500, As-Built), alongside 4D construction sequencing, 5D quantification, 7D asset information management and Digital Twin integration.",
     role: "Client BIM Manager, deputed to the Ministry of Culture, Sports & Youth",
