@@ -27,7 +27,7 @@ export const profile = {
   yearsExperience: "15+",
   location: "Muscat, Oman",
   hometown: "Kharagpur, West Bengal, India",
-  basedCountries: ["India", "Saudi Arabia", "Thailand", "Singapore", "Oman"],
+  basedCountries: ["India", "Saudi Arabia", "Thailand", "Singapore", "Vietnam", "Oman"],
   email: "info@prithijit.com",
   phones: [
     { label: "Oman", number: "+968 9954 1726", href: "tel:+96899541726" },
@@ -46,8 +46,8 @@ export const profile = {
 };
 
 export const bio = [
-  "Prithijit grew up in Kharagpur, West Bengal, and began his career as an architect in Kolkata and Bangalore before moving into BIM leadership in 2013. Since then, he has directed model delivery, clash resolution and digital-twin workflows for metro systems, airports, nuclear power stations and heritage restorations — working from India, Saudi Arabia, Thailand and Singapore to his current base in Muscat.",
-  "As a Contractual Technical Consultant with Autodesk Consulting, he implemented BIM-integrated solutions for a real-estate developer in Bangkok and the Singapore Metro Line Extension for the Land Transport Authority — leading teams of 200+ specialists across multiple countries. At his peak, he has directed distributed modelling teams of over 300 people spanning six countries on a single tower.",
+  "Prithijit grew up in Kharagpur, West Bengal, and began his career as an architect in Kolkata and Bangalore before moving into BIM leadership in 2013. Since then, he has directed model delivery, clash resolution and digital-twin workflows for metro systems, airports, nuclear power stations and heritage restorations — working from India, Saudi Arabia, Thailand, Singapore and Vietnam to his current base in Muscat.",
+  "As a Technical Consultant with Autodesk Consulting, he implemented BIM-integrated solutions for a real-estate developer in Bangkok and the Singapore Metro Line Extension for the Land Transport Authority — leading teams of 200+ specialists across multiple countries. At his peak, he directed a distributed modelling team of 326 people spanning eight countries across two Bangkok towers.",
   "His approach treats BIM as a coordination discipline first and a software discipline second: standards and LOD targets are agreed before a single wall is modelled, clash reports drive weekly discipline sync-ups rather than end-of-phase surprises, and every model is built with the next lifecycle stage — construction, then facility management — already in mind.",
 ];
 
@@ -122,7 +122,7 @@ export const experience: ExperienceItem[] = [
     company: "Dar Al-Handasah",
     location: "Muscat, Oman",
     period: "Feb 2025 — Present",
-    duration: "1 yr 10 mos",
+    duration: "1 yr 8 mos",
     current: true,
     bullets: [
       "Deputed client-side to Oman's Ministry of Culture, Sports & Youth as Client BIM Manager for the Sayyid Tarik bin Taimur Cultural Complex.",
@@ -384,11 +384,11 @@ export const projects: Project[] = [
     credit: "DMRC",
     location: "Delhi, India",
     category: "Rail & Transit",
-    summary: "52.31 km, 37 elevated stations across 3 corridors.",
+    summary: "52.31 km, 40 elevated stations across 3 corridors.",
     description:
-      "Managed the production and delivery of BIM models across three corridors — Rithala–Bawana–Narela (21.73 km, 20 stations), Janakpuri–Majlis Park (18.04 km, 10 stations) and Majlis Park–Maujpur (12.54 km, 10 stations) — coordinating delivery between every design discipline for a combined 52.31 km and 37 elevated stations, each with concourse and platform levels.",
+      "Managed the production and delivery of BIM models across three corridors — Rithala–Bawana–Narela (21.73 km, 20 stations), Janakpuri–Majlis Park (18.04 km, 10 stations) and Majlis Park–Maujpur (12.54 km, 10 stations) — coordinating delivery between every design discipline for a combined 52.31 km and 40 elevated stations, each with concourse and platform levels.",
     role: "BIM Coordination Manager",
-    scale: "52.31 km · 37 elevated stations · 3 corridors",
+    scale: "52.31 km · 40 elevated stations · 3 corridors",
     featured: true,
   },
   {
@@ -427,6 +427,42 @@ export const projects: Project[] = [
     role: "Design Lead",
     lod: "LOD 100 → LOD 300",
     tools: "Revit Dynamo (generative design)",
+  },
+  {
+    slug: "pune-airport-terminal",
+    name: "Pune Airport (PNQ) — New Integrated Terminal",
+    credit: "Egis Design Center",
+    location: "Pune, India",
+    category: "Aviation",
+    summary: "New integrated terminal building, taken from construction to as-built.",
+    description:
+      "Directed the Gurgaon EDC BIM team to deliver LOD 400 construction models and LOD 500 as-built operational models for Pune Airport's new integrated terminal building.",
+    role: "BIM Manager, EDC",
+    lod: "LOD 400 → LOD 500",
+  },
+  {
+    slug: "lucknow-airport-terminal-3",
+    name: "Lucknow Airport (LKO) — Terminal 3",
+    credit: "Egis Design Center",
+    location: "Lucknow, India",
+    category: "Aviation",
+    summary: "Structural and MEP BIM for baggage-handling systems within an updated master plan.",
+    description:
+      "Led comprehensive BIM modelling for structural and MEP disciplines at Lucknow Airport's Terminal 3, resolving clashes to accommodate advanced baggage-handling systems within the updated master-plan footprint.",
+    role: "BIM Manager, EDC",
+    lod: "LOD 400 / LOD 500",
+  },
+  {
+    slug: "trichy-international-airport",
+    name: "Trichy International Airport (TRZ) — Integrated Terminal",
+    credit: "Egis Design Center",
+    location: "Tiruchirappalli, India",
+    category: "Aviation",
+    summary: "Terminal geometry taken from fabrication-ready to operational as-built.",
+    description:
+      "Managed the transition of Trichy International Airport's terminal design geometry into fabrication-ready LOD 400 models and operational LOD 500 digital assets.",
+    role: "BIM Manager, EDC",
+    lod: "LOD 400 / LOD 500",
   },
   {
     slug: "doha-international-airport",
@@ -470,18 +506,57 @@ export const projects: Project[] = [
     scale: "3,200 MWe · twin-EPR reactors",
   },
   {
-    slug: "high-end-residential-bangkok",
-    name: "High-End Residential Tower",
-    credit: "A49 + DWP + Qbic + EEC",
+    slug: "ashton-asoke-ideo-mobi-sukhumvit-66",
+    name: "Ashton Asoke & Ideo Mobi Sukhumvit 66",
+    credit: "Ananda Development · A49 + DWP + Qbic + EEC",
     location: "Bangkok, Thailand",
     category: "Residential",
-    summary: "40 floors, 650+ units, a 326-person team across six countries.",
+    summary: "Two flagship luxury towers, a 326-person team across eight countries.",
     description:
-      "Technical Consultant imparting BIM expertise on a 40-floor, 650+ dwelling-unit residential tower, managing a distributed team of 326 members from Bangkok and India spanning Singapore, Vietnam, South Korea, Japan, Australia and the US.",
-    role: "Technical Consultant",
-    scale: "40 floors · 650+ dwelling units",
-    team: "326 members across 6 countries",
+      "Spearheaded enterprise-level BIM implementation for two flagship luxury residential towers, developing and enforcing a unified BEP that drove LOD 200 schematic design through LOD 400 construction-ready geometry. Led 3D spatial coordination and Navisworks clash detection between A49 (architecture), Qbic (structure), EEC (MEPF) and DWP (interior fit-out), and implemented standardised CDE protocols across a decentralised 326-member team spanning Bangkok, India, Singapore, Vietnam, South Korea, Japan, Australia and the US.",
+    role: "AEC Technical Consultant",
+    scale: "2 towers · 1,081 residential units combined",
+    lod: "LOD 200 → LOD 400",
+    team: "326 members across 8 countries",
+    tools: "Navisworks clash detection · CDE protocols",
     featured: true,
+    subBuildings: [
+      {
+        name: "Ashton Asoke",
+        description:
+          "A 50-storey, 783-unit ultra-luxury tower at the prime Asoke intersection, with a complex iconic curved-glass facade.",
+      },
+      {
+        name: "Ideo Mobi Sukhumvit 66",
+        description:
+          "A 28-storey, 298-unit premium high-rise focused on smart living, maximising spatial efficiency and modern amenities.",
+      },
+    ],
+  },
+  {
+    slug: "dung-quat-refinery",
+    name: "Dung Quất Refinery",
+    credit: "Petrovietnam",
+    location: "Quảng Ngãi, Vietnam",
+    category: "Energy & Industrial",
+    summary: "Vietnam's first oil refinery — 6.5 Mt/yr, modelled to LOD 350/400/500.",
+    description:
+      "Drove enterprise-level BIM implementation for Vietnam's first oil refinery, a heavy industrial and petrochemical facility processing 6.5 million tons per year. Scope covered intelligent 3D modelling for process utility facilities, crude tank farms and interconnecting pipeline networks — establishing LOD 350/400/500 standards for piping, structural steel and mechanical equipment, and running Navisworks clash detection across dense mechanical nodes ahead of fabrication.",
+    role: "AEC Technical Consultant",
+    scale: "6.5 million tons/year processing capacity",
+    lod: "LOD 350 · 400 · 500",
+    tools: "Navisworks clash detection",
+  },
+  {
+    slug: "sainsburys-nine-elms-redevelopment",
+    name: "Sainsbury's Nine Elms Redevelopment",
+    credit: "Broadway Malyan",
+    location: "London, United Kingdom",
+    category: "Residential",
+    summary: "Retail and luxury residential BIM across design and construction.",
+    description:
+      "Managed end-to-end BIM modelling and coordination across both design and construction stages for an urban regeneration project combining retail and luxury residential space.",
+    role: "BIM Coordination",
   },
   {
     slug: "ireo-grand-arch",
@@ -515,14 +590,14 @@ export const projects: Project[] = [
   },
   {
     slug: "scan-to-bim-heritage-forts",
-    name: "Scan-to-BIM: Amer Fort & Kumbhalgarh Fort",
+    name: "Heritage Forts & Palaces — Rajasthan Scan-to-BIM",
     credit: "Heritage Conservation",
     location: "Rajasthan, India",
     category: "Heritage",
-    summary: "As-built LOD 500 heritage modelling from LiDAR point clouds.",
+    summary: "As-built LOD 500 heritage modelling from LiDAR point clouds, across five monuments.",
     description:
-      "Led a team of 65 modelers and 15 architects to model both heritage forts at LOD 500 (as-built), working from laser-scanned point-cloud data captured on site by LiDAR scanners.",
-    role: "Team Lead",
+      "Led an 18-month digital-preservation programme transforming LiDAR point-cloud data into highly detailed as-built models of five of India's iconic monuments — Amer Fort (Jaipur), City Palace, Albert Hall, Udaipur Fort and Kumbhalgarh Fort — at LOD 500, capturing the non-linear geometries of ancient architecture (ornate carvings, structural deformations, historical masonry) to support conservation, structural analysis and future facility management. Directed a team of 65 modelers and 15 architects, running QA/QC to verify Revit models against the raw point-cloud data.",
+    role: "Project Manager",
     lod: "LOD 500 (As-Built)",
     team: "65 modelers + 15 architects",
     tools: "LiDAR scan-to-BIM",
@@ -563,10 +638,8 @@ export const skillGroups = [
     skills: [
       { name: "Autodesk Forma", level: 10 },
       { name: "Autodesk Revit", level: 9 },
-      { name: "Autodesk FormIt", level: 6 },
       { name: "Autodesk 3ds Max", level: 5 },
       { name: "Autodesk Civil 3D", level: 5 },
-      { name: "Autodesk Inventor", level: 5 },
     ],
   },
   {

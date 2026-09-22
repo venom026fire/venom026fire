@@ -15,12 +15,12 @@ import { experience, profile, projects } from "../data/content";
 const HERO_STATS = [
   { value: 15, suffix: "+", label: "Years in BIM & VDC" },
   { value: projects.length, suffix: "", label: "Landmark projects" },
-  { value: 5, suffix: "", label: "Countries based in" },
+  { value: profile.basedCountries.length, suffix: "", label: "Countries based in" },
 ];
 
 const GLANCE_STATS = [
   { value: experience.length, suffix: "", label: "Roles held", description: "Jr. architect to BIM Manager" },
-  { value: 300, suffix: "+", label: "Largest team led", description: "Across 6 countries, one tower" },
+  { value: 326, suffix: "", label: "Largest team led", description: "Across 8 countries, two Bangkok towers" },
   { value: 200, suffix: "+", label: "Team on Singapore Metro", description: "As Technical Consultant" },
   { value: 500, suffix: "", label: "Highest LOD delivered", description: "As-built, from LiDAR scan data" },
 ];
