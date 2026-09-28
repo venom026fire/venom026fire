@@ -1,6 +1,7 @@
 import { ArrowRight, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import Reveal from "./ui/Reveal";
+import ctaBanner from "../assets/cta-banner.webp";
 import { profile } from "../data/content";
 
 export default function CTABanner() {
@@ -9,7 +10,13 @@ export default function CTABanner() {
       <div className="container-page">
         <Reveal>
           <div className="card relative overflow-hidden p-10 text-center sm:p-16">
-            <div className="pointer-events-none absolute inset-0 bg-blueprint bg-grid opacity-30" />
+            <img
+              src={ctaBanner}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/80 to-ink-900/40" />
             <div className="relative">
               <h2 className="font-display text-2xl font-bold text-mist-100 sm:text-3xl">
                 Let's build something worth modelling.

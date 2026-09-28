@@ -1,11 +1,23 @@
 import Reveal from "./Reveal";
 
-type Props = { code?: string; eyebrow: string; title: string; description?: string };
+type Props = { code?: string; eyebrow: string; title: string; description?: string; backgroundImage?: string };
 
-export default function PageHeader({ code, eyebrow, title, description }: Props) {
+export default function PageHeader({ code, eyebrow, title, description, backgroundImage }: Props) {
   return (
-    <div className="relative pb-14 pt-32 sm:pt-40">
-      <div className="pointer-events-none absolute inset-0 bg-blueprint bg-grid opacity-30" />
+    <div className="relative overflow-hidden pb-14 pt-32 sm:pt-40">
+      {backgroundImage ? (
+        <>
+          <img
+            src={backgroundImage}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover opacity-25"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink-900/60 via-ink-900/85 to-ink-900" />
+        </>
+      ) : (
+        <div className="pointer-events-none absolute inset-0 bg-blueprint bg-grid opacity-30" />
+      )}
       <div className="container-page relative">
         <Reveal>
           <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-gold-500">

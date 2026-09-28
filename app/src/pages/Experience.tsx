@@ -2,6 +2,7 @@ import { MapPin } from "lucide-react";
 import CTABanner from "../components/CTABanner";
 import PageHeader from "../components/ui/PageHeader";
 import Reveal from "../components/ui/Reveal";
+import experienceBanner from "../assets/experience-banner.webp";
 import { experience } from "../data/content";
 
 export default function Experience() {
@@ -12,6 +13,7 @@ export default function Experience() {
         eyebrow="Career"
         title="Ten roles, four countries, one steady climb."
         description="From junior architect to BIM Manager for some of the region's largest infrastructure programmes — the complete timeline, November 2010 to present."
+        backgroundImage={experienceBanner}
       />
 
       <section className="pb-24">
