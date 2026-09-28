@@ -12,7 +12,7 @@ export default function Experience() {
         code="02"
         eyebrow="Career"
         title="Ten roles, four countries, one steady climb."
-        description="From junior architect to BIM Manager for some of the region's largest infrastructure programmes — the complete timeline, November 2010 to present."
+        description="From Jr. Architect to BIM Manager for some of the region's largest infrastructure programmes — the complete timeline, November 2010 to present."
         backgroundImage={experienceBanner}
       />
 

@@ -171,7 +171,7 @@ export default function Home() {
 
             <Reveal delay={0.1}>
               <h2 className="section-heading">
-                From junior architect in Kolkata to BIM Manager across four countries.
+                From Jr. Architect in Kolkata to BIM Manager across four countries.
               </h2>
               <p className="mt-4 leading-relaxed text-mist-300">
                 Prithijit builds and leads the BIM function inside design consultancies and on-site
