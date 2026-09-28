@@ -28,7 +28,7 @@ export const profile = {
   location: "Muscat, Oman",
   hometown: "Kharagpur, West Bengal, India",
   basedCountries: ["India", "Saudi Arabia", "Thailand", "Singapore", "Vietnam", "Oman"],
-  email: "info@prithijit.com",
+  email: "prithijit.majumder@gmail.com",
   phones: [
     { label: "Oman", number: "+968 9954 1726", href: "tel:+96899541726" },
     { label: "India", number: "+91 89102 59729", href: "tel:+918910259729" },
