@@ -11,8 +11,8 @@ export default function Experience() {
       <PageHeader
         code="02"
         eyebrow="Career"
-        title="Ten roles, four countries, one steady climb."
-        description="From Jr. Architect to BIM Manager for some of the region's largest infrastructure programmes — the complete timeline, November 2010 to present."
+        title="From architecture to client BIM leadership"
+        description="Over 15 years of experience applying BIM across architectural design, construction coordination and asset information. My work spans cultural landmarks, rail networks, airports, residential developments and industrial facilities in India, the Middle East and Southeast Asia."
         backgroundImage={experienceBanner}
       />
 

@@ -23,11 +23,11 @@ export const profile = {
   initials: "PM",
   role: "Lead BIM Manager & Virtual Design–Construction Specialist",
   tagline:
-    "Streamlining BIM processes across design consultancies and on-site construction — from concept to as-built, on four continents.",
+    "Streamlining BIM processes across design consultancies and on-site construction — from concept to as-built, across six countries.",
   yearsExperience: "15+",
   location: "Muscat, Oman",
   hometown: "Kharagpur, West Bengal, India",
-  basedCountries: ["India", "Saudi Arabia", "Thailand", "Singapore", "Vietnam", "Oman"],
+  basedCountries: ["Oman", "Saudi Arabia", "India", "Singapore", "Vietnam", "Thailand"],
   email: "prithijit.majumder@gmail.com",
   phones: [
     { label: "Oman", number: "+968 9954 1726", href: "tel:+96899541726" },
@@ -46,9 +46,12 @@ export const profile = {
 };
 
 export const bio = [
-  "Prithijit grew up in Kharagpur, West Bengal, and began his career as an architect in Kolkata and Bangalore before moving into BIM leadership in 2013. Since then, he has directed model delivery, clash resolution and digital-twin workflows for metro systems, airports, nuclear power stations and heritage restorations — working from India, Saudi Arabia, Thailand, Singapore and Vietnam to his current base in Muscat.",
-  "As a Technical Consultant with Autodesk Consulting, he implemented BIM-integrated solutions for a real-estate developer in Bangkok and the Singapore Metro Line Extension for the Land Transport Authority — leading teams of 200+ specialists across multiple countries. At his peak, he directed a distributed modelling team of 326 people spanning eight countries across two Bangkok towers.",
-  "His approach treats BIM as a coordination discipline first and a software discipline second: standards and LOD targets are agreed before a single wall is modelled, clash reports drive weekly discipline sync-ups rather than end-of-phase surprises, and every model is built with the next lifecycle stage — construction, then facility management — already in mind.",
+  "During architecture school, I was fascinated by digital tools that let me create a model and explore a space in three dimensions. As architects, we need to picture how a place will look, feel and work. A 3D environment gave me another way to test that understanding beyond a set of 2D drawings. I learned AutoCAD quickly when it was taught in college, then began learning Autodesk Revit on my own.",
+  "While I was still studying, I took on freelance BIM modelling for live projects to learn Revit through real work. I began to see how a model could help teams develop a design, coordinate disciplines and prepare for construction. After my internship, I joined a design firm in Kolkata as a trainee architect, supporting its team with 3D models and BIM-based coordination. I later joined a Bengaluru design firm, where I applied my 3D modelling and visualisation skills to architectural projects.",
+  "I have always enjoyed difficult modelling challenges. In 2014, that interest took me to work on the Grand Théâtre de Rabat in Morocco, a landmark project designed by Zaha Hadid Architects. Its complex geometry strengthened my commitment to finding practical ways to carry ambitious architectural ideas through design and construction using BIM based workflows.",
+  "As I worked with more teams and project types, I learned that BIM's value continues after construction. Reliable models and structured asset information can help the people who operate and maintain a facility. That wider view shaped my growth as a BIM Implementation Specialist: establishing useful workflows, improving multidisciplinary coordination and keeping the next stage of a building's life in mind.",
+  "My approach to solving project challenges led to an assignment through UniBIM Services with Autodesk Consulting as an AEC Technical Consultant. I supported BIM implementation for projects in Thailand, Vietnam and Singapore, helping international teams put shared processes and digital tools into practice.",
+  "Today, I bring more than 15 years of experience across architecture, BIM Management and Digital Delivery. As Lead BIM Manager with Dar Al-Handasah, deputed to Oman's Ministry of Culture, Sports & Youth as Client BIM Manager for the Sayyid Tarik bin Taimur Cultural Complex, I work across design coordination, construction models, as-built information and readiness for facility operations. The curiosity that drew me to 3D modelling in college still guides my work: use the model to understand the space, resolve problems together and leave information that remains useful long after handover.",
 ];
 
 export const capabilities = [
@@ -132,10 +135,14 @@ export const experience: ExperienceItem[] = [
   {
     title: "BIM Manager — All Trades & Disciplines",
     company: "Saudi Icon Company",
-    location: "Riyadh, Saudi Arabia",
+    location: "Red Sea Global, Saudi Arabia",
     period: "Mar 2024 — Dec 2024",
     duration: "10 months",
-    bullets: ["Directed BIM delivery across all trades and disciplines on Saudi-based construction projects."],
+    bullets: [
+      "Managed BIM delivery for 200+ site buildings and interior fit-outs on the Red Sea Global Project's Shura Island, covering LOD 400 construction models and LOD 500 as-built models.",
+      "Coordinated across contractors, vendors, client BIM teams and site execution teams to resolve design and construction interfaces.",
+      "Led model QA/QC, clash review and technical issue resolution before client submissions.",
+    ],
   },
   {
     title: "BIM Manager, GID/CPA",
@@ -143,7 +150,11 @@ export const experience: ExperienceItem[] = [
     location: "Gurgaon, India",
     period: "Dec 2022 — Jan 2024",
     duration: "1 yr 1 mo",
-    bullets: ["Managed BIM production for the Global Infrastructure Design / CPA portfolio."],
+    bullets: [
+      "Managed multidisciplinary BIM delivery for 31 site buildings at NEOM Oxagon Port City, Saudi Arabia, across architectural, structural and MEPF disciplines at LOD 350.",
+      "Guided modelling teams through technical queries, model reviews and clash resolution.",
+      "Reviewed model quality and coordination reports to support complete, consistent submissions.",
+    ],
   },
   {
     title: "BIM Manager, EDC",
@@ -151,7 +162,11 @@ export const experience: ExperienceItem[] = [
     location: "Gurgaon, India",
     period: "Nov 2019 — Dec 2022",
     duration: "3 yrs 2 mos",
-    bullets: ["Ran the Egis Design Center's BIM operations across multidisciplinary infrastructure projects."],
+    bullets: [
+      "Led BIM delivery across rail, aviation and aerospace projects, coordinating design teams and multidisciplinary models from concept development through construction and as-built stages.",
+      "Managed model production for Delhi Metro Phase IV's 40 elevated stations across three corridors, alongside BIM work for Dhaka Metro Line 5 and Bengaluru's Airport Terminal metro station.",
+      "Directed construction and as-built BIM delivery for the Pune, Lucknow and Trichy airport terminals and supported facility-management-focused modelling for the Dassault Reliance Aerospace development in Nagpur.",
+    ],
   },
   {
     title: "Project Manager, Architecture",
@@ -160,28 +175,33 @@ export const experience: ExperienceItem[] = [
     period: "Feb 2018 — Nov 2019",
     duration: "1 yr 9 mos",
     bullets: [
-      "Consultant BIM Manager for Riyadh Metro, deputed to AECOM Kolkata (6 months).",
-      "Project Manager for BIM outsourcing projects across the US, UK, Middle East, Australia and South-East Asia.",
+      "Managed architectural and BIM outsourcing work for projects in the US, UK, Middle East, Australia and Southeast Asia, aligning teams and resources with delivery schedules.",
+      "Served on a six-month deputation to AECOM Kolkata as Consultant BIM Manager for Riyadh Metro Lines 1 and 2.",
+      "Oversaw BIM delivery and resource planning for elevated stations, cut & cover facilities and emergency egress works, supporting a team of more than 30 members.",
     ],
   },
   {
     title: "Technical Consultant, BIM Implementation",
     company: "Autodesk Consulting · via UniBIM Services",
-    location: "Bangkok, Thailand & Singapore",
+    location: "Thailand, Vietnam, Singapore and India",
     period: "Oct 2015 — Dec 2017",
     duration: "2 yrs 3 mos",
     bullets: [
-      "BIM implementation for a real estate developer in Bangkok, Thailand (1 yr 3 mos).",
-      "BIM implementation for the Singapore Metro Line Extension with the Land Transport Authority (1 yr).",
+      "Deputed through UniBIM Services to Autodesk Consulting to support BIM implementation on international residential, rail and industrial energy projects.",
+      "Helped establish BIM execution, multidisciplinary coordination, model QA/QC and information-sharing workflows for Ananda Development's residential towers in Bangkok, Dung Quất Refinery in Vietnam and a Singapore Metro extension.",
+      "Worked with large international project teams, providing technical guidance, training and practical solutions to modelling and coordination challenges — including a heritage Scan-to-BIM initiative in Rajasthan, converting laser-scan data into detailed as-built models.",
     ],
   },
   {
-    title: "BIM Manager (Contractual)",
+    title: "BIM Architect, with BIM Manager Responsibilities",
     company: "WS Atkins",
     location: "Gurgaon & Bengaluru, India",
     period: "Feb 2015 — Oct 2015",
-    duration: "9 months",
-    bullets: ["Implemented BIM within Atkins' existing architectural design process."],
+    duration: "9 months · Contract",
+    bullets: [
+      "Supported BIM implementation within the design process for Riyadh Metro Lines 4 and 6, covering elevated and shallow underground stations and Park & Ride facilities.",
+      "Managed BIM-based design delivery and coordination across architectural, structural and MEP disciplines, helping teams resolve spatial interfaces and apply consistent modelling standards.",
+    ],
   },
   {
     title: "Team Lead BIM, Architecture",
@@ -189,23 +209,34 @@ export const experience: ExperienceItem[] = [
     location: "Gurgaon, India",
     period: "Nov 2013 — Jan 2015",
     duration: "1 yr 3 mos",
-    bullets: ["Led the BIM/architecture team on outsourced modelling projects."],
+    bullets: [
+      "Led architectural BIM modelling and design coordination for international projects, including the Grand Théâtre de Rabat in Morocco, designed by Zaha Hadid Architects.",
+      "Addressed complex geometry and multidisciplinary interfaces across design and construction-stage work, translating ambitious design intent into coordinated BIM models.",
+      "Also supported projects including King Abdullah International Gardens, King Fahad Medical City, the National Bank of Kuwait headquarters and Sainsbury's Nine Elms redevelopment.",
+    ],
   },
   {
-    title: "Jr. Architect",
+    title: "Junior Architect",
     company: "Office of Sanjay & Sridevi Adhlakha (OSSA Architects)",
     location: "Bangalore, India",
     period: "Nov 2012 — Oct 2013",
     duration: "1 yr",
-    bullets: [],
+    bullets: [
+      "Worked across architectural design, detailing and BIM modelling for the Omicron Office and Workshop project, including its external architecture and interior fit-outs.",
+      "Supported design and construction-stage coordination, worked with the technical modelling team and participated in regular client progress discussions.",
+    ],
   },
   {
-    title: "Jr. Architect",
+    title: "Trainee Architect & Junior Architect",
     company: "Studio for Architecture Landscape Interior Enterprise (SALIENT)",
     location: "Kolkata, India",
     period: "Nov 2010 — Oct 2012",
     duration: "2 yrs",
-    bullets: [],
+    bullets: [
+      "Supported architectural design, detailing and BIM coordination for City Center developments in Siliguri, Patna and Raipur.",
+      "Contributed BIM and design-integration support to Benubana Chhaya Park in Kolkata, working across architecture and landscape interfaces.",
+      "These early projects established my approach to using 3D models to communicate design decisions and coordinate the work of different disciplines.",
+    ],
   },
 ];
 
@@ -242,10 +273,15 @@ export const projectCategories = [
   "Rail & Transit",
   "Aviation",
   "Cultural & Landmark",
+  "Commercial",
   "Residential",
+  "Ports & Marine",
+  "Roads & Infrastructure",
+  "Energy",
+  "Landscape",
+  "Healthcare",
+  "Hospitality",
   "Heritage",
-  "Energy & Industrial",
-  "Landscape & Healthcare",
 ];
 
 export const projects: Project[] = [
@@ -330,7 +366,7 @@ export const projects: Project[] = [
     name: "NEOM Oxagon Port City",
     credit: "NEOM",
     location: "Saudi Arabia",
-    category: "Energy & Industrial",
+    category: "Ports & Marine",
     summary: "31 site buildings across every ASMEPF discipline, delivered at LOD 350.",
     description:
       "Managed BIM delivery of 31 site buildings across all ASMEPF disciplines, running clash detection, resolution and QA/QC review before every submission and resolving technical queries for the modelling teams to keep deliveries on schedule.",
@@ -341,10 +377,10 @@ export const projects: Project[] = [
   },
   {
     slug: "red-sea-project",
-    name: "The Red Sea Project",
+    name: "The Red Sea Project — Shura Island",
     credit: "Red Sea Global · On-Site",
     location: "Saudi Arabia",
-    category: "Landscape & Healthcare",
+    category: "Hospitality",
     summary: "200+ site buildings taken from construction to as-built, on-site.",
     description:
       "Delivered BIM models for 200+ site buildings with interior fit-outs, progressing from LOD 400 construction through LOD 500 as-built. Coordinated clash resolution against other contractors' BIM models directly with client BIM teams and the site execution team.",
@@ -479,7 +515,7 @@ export const projects: Project[] = [
     name: "National Bank of Kuwait HQ",
     credit: "Foster + Partners",
     location: "Kuwait City, Kuwait",
-    category: "Cultural & Landmark",
+    category: "Commercial",
     summary: "BIM coordination for the NBK headquarters tower.",
     description: "BIM coordination support for the National Bank of Kuwait headquarters tower.",
     role: "BIM Coordination",
@@ -499,7 +535,7 @@ export const projects: Project[] = [
     name: "Hinkley Point C Nuclear Power Station",
     credit: "EDF Energy",
     location: "Somerset, UK",
-    category: "Energy & Industrial",
+    category: "Energy",
     summary: "3,200 MWe twin-EPR nuclear power station.",
     description: "BIM delivery support for a 3,200 MWe nuclear power station built around two EPR reactors.",
     role: "BIM Support",
@@ -538,7 +574,7 @@ export const projects: Project[] = [
     name: "Dung Quất Refinery",
     credit: "Petrovietnam",
     location: "Quảng Ngãi, Vietnam",
-    category: "Energy & Industrial",
+    category: "Energy",
     summary: "Vietnam's first oil refinery — 6.5 Mt/yr, modelled to LOD 350/400/500.",
     description:
       "Drove enterprise-level BIM implementation for Vietnam's first oil refinery, a heavy industrial and petrochemical facility processing 6.5 million tons per year. Scope covered intelligent 3D modelling for process utility facilities, crude tank farms and interconnecting pipeline networks — establishing LOD 350/400/500 standards for piping, structural steel and mechanical equipment, and running Navisworks clash detection across dense mechanical nodes ahead of fabrication.",
@@ -573,7 +609,7 @@ export const projects: Project[] = [
     name: "King Fahad Medical City",
     credit: "HKS",
     location: "Riyadh, Saudi Arabia",
-    category: "Landscape & Healthcare",
+    category: "Healthcare",
     summary: "BIM coordination for the Central Service Building.",
     description: "BIM coordination for the Central Service Building at King Fahad Medical City.",
     role: "BIM Coordination",
@@ -583,7 +619,7 @@ export const projects: Project[] = [
     name: "King Abdullah International Gardens",
     credit: "Barton Willmore",
     location: "Riyadh, Saudi Arabia",
-    category: "Landscape & Healthcare",
+    category: "Landscape",
     summary: "A series of gardens and landscaping across the Riyadh site.",
     description: "BIM and landscape-coordination support for a series of gardens and landscaping across the Riyadh site.",
     role: "BIM Coordination",
@@ -608,7 +644,7 @@ export const projects: Project[] = [
     name: "A30 Temple to Higher Carblake Improvement",
     credit: "KIER",
     location: "Cornwall, UK",
-    category: "Energy & Industrial",
+    category: "Roads & Infrastructure",
     summary: "Highway dualing connecting Cornwall to the wider UK network.",
     description: "BIM support for dualing of the carriageway, connecting Cornwall to the wider UK highway network.",
     role: "BIM Support",
@@ -618,13 +654,68 @@ export const projects: Project[] = [
     name: "Dassault Reliance Aerospace — Phase 1.2",
     credit: "Dassault Reliance Aerospace Ltd.",
     location: "Nagpur, India",
-    category: "Energy & Industrial",
+    category: "Aviation",
     summary: "2 hangars and 3 ancillary/parking areas at LOD 450.",
     description:
       "BIM modelling of 2 hangar facilities and 3 ancillary/parking areas at LOD 450, built with an intent of downstream facility management.",
     role: "BIM Modeler",
     scale: "2 hangar facilities · 3 ancillary/parking areas",
     lod: "LOD 450",
+  },
+  {
+    slug: "omicron-office-and-workshop",
+    name: "Omicron Office and Workshop",
+    credit: "OSSA Architects",
+    location: "Bengaluru, India",
+    category: "Commercial",
+    summary: "External architecture and interior fit-outs for an office and workshop development.",
+    description:
+      "Worked across architectural design, detailing and BIM modelling for the Omicron Office and Workshop project, covering its external architecture and interior fit-outs. Supported design and construction-stage coordination alongside the technical modelling team, with regular client progress discussions.",
+    role: "Junior Architect",
+  },
+  {
+    slug: "city-centre-siliguri",
+    name: "City Centre, Siliguri",
+    credit: "Ambuja Neotia",
+    location: "Siliguri, West Bengal, India",
+    category: "Commercial",
+    summary: "Architectural design, detailing and BIM coordination for a retail development.",
+    description:
+      "Supported architectural design, detailing and BIM coordination for the City Center retail development in Siliguri, an early project that established an approach to using 3D models to communicate design decisions and coordinate the work of different disciplines.",
+    role: "Trainee Architect & Junior Architect",
+  },
+  {
+    slug: "city-centre-patna",
+    name: "City Centre, Patna",
+    credit: "Ambuja Neotia",
+    location: "Patna, Bihar, India",
+    category: "Commercial",
+    summary: "Architectural design, detailing and BIM coordination for a retail development.",
+    description:
+      "Supported architectural design, detailing and BIM coordination for the City Center retail development in Patna, an early project that established an approach to using 3D models to communicate design decisions and coordinate the work of different disciplines.",
+    role: "Trainee Architect & Junior Architect",
+  },
+  {
+    slug: "city-centre-raipur",
+    name: "City Centre, Raipur",
+    credit: "Ambuja Neotia",
+    location: "Raipur, Chhattisgarh, India",
+    category: "Commercial",
+    summary: "Architectural design, detailing and BIM coordination for a retail development.",
+    description:
+      "Supported architectural design, detailing and BIM coordination for the City Center retail development in Raipur, an early project that established an approach to using 3D models to communicate design decisions and coordinate the work of different disciplines.",
+    role: "Trainee Architect & Junior Architect",
+  },
+  {
+    slug: "benubana-chhaya-park",
+    name: "Benubana Chhaya Park",
+    credit: "Kolkata Municipal Development Authority (KMDA)",
+    location: "Kolkata, India",
+    category: "Landscape",
+    summary: "Design-integration support across architecture and landscape interfaces.",
+    description:
+      "Contributed BIM and design-integration support to Benubana Chhaya Park in Kolkata, working across architecture and landscape interfaces alongside the wider design team.",
+    role: "Trainee Architect & Junior Architect",
   },
 ];
 
@@ -676,5 +767,5 @@ export const education = [
 
 export const quote = {
   text: "Architecture is the will of an epoch translated into space.",
-  author: "Le Corbusier",
+  author: "Ludwig Mies van der Rohe",
 };

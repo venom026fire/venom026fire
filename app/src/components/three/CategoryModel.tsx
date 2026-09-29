@@ -28,7 +28,7 @@ function AviationModel() {
   );
 }
 
-function LandmarkModel() {
+function LandmarkModel({ tagA = "Landmark", tagB = "Cultural Venue" }: { tagA?: string; tagB?: string } = {}) {
   const levels = [0, 1, 2, 3, 4];
   return (
     <>
@@ -45,15 +45,15 @@ function LandmarkModel() {
           />
         );
       })}
-      <Tag color={GOLD}>Landmark</Tag>
+      <Tag color={GOLD}>{tagA}</Tag>
       <group position={[0, 2.6, 0]}>
-        <Tag color={CYAN}>Cultural Venue</Tag>
+        <Tag color={CYAN}>{tagB}</Tag>
       </group>
     </>
   );
 }
 
-function ResidentialModel() {
+function ResidentialModel({ tagA = "Residential Tower", tagB = "650+ Units" }: { tagA?: string; tagB?: string } = {}) {
   const floors = Array.from({ length: 8 }, (_, i) => i);
   return (
     <>
@@ -66,9 +66,9 @@ function ResidentialModel() {
         .map((f) => (
           <Beam key={f} position={[1.5, -2.6 + f * 0.72 + 0.3, 0]} args={[0.5, 0.4, 0.6]} color={CYAN} opacity={0.1} />
         ))}
-      <Tag color={GOLD}>Residential Tower</Tag>
+      <Tag color={GOLD}>{tagA}</Tag>
       <group position={[0, 3.2, 0]}>
-        <Tag color={CYAN}>650+ Units</Tag>
+        <Tag color={CYAN}>{tagB}</Tag>
       </group>
     </>
   );
@@ -96,21 +96,21 @@ function HeritageModel() {
   );
 }
 
-function IndustrialModel() {
+function IndustrialModel({ tagA = "Energy & Industrial", tagB = "LOD 350–450" }: { tagA?: string; tagB?: string } = {}) {
   return (
     <>
       <TaperedColumn position={[-1.8, 0, 0]} radiusTop={0.55} radiusBottom={0.85} height={3.2} color={GOLD} opacity={0.09} />
       <TaperedColumn position={[0.4, -0.3, 0.6]} radiusTop={0.4} radiusBottom={0.65} height={2.6} color={CYAN} opacity={0.09} />
       <Beam position={[2.6, -1.4, -0.4]} args={[2.2, 1.1, 2]} color={CYAN} opacity={0.07} />
-      <Tag color={GOLD}>Energy &amp; Industrial</Tag>
+      <Tag color={GOLD}>{tagA}</Tag>
       <group position={[0, 2.1, 0]}>
-        <Tag color={CYAN}>LOD 350–450</Tag>
+        <Tag color={CYAN}>{tagB}</Tag>
       </group>
     </>
   );
 }
 
-function LandscapeModel() {
+function LandscapeModel({ tagA = "Landscape & Healthcare" }: { tagA?: string } = {}) {
   const tiers = [0, 1, 2, 3];
   return (
     <>
@@ -131,7 +131,7 @@ function LandscapeModel() {
           </mesh>
         )),
       )}
-      <Tag color={GOLD}>Landscape &amp; Healthcare</Tag>
+      <Tag color={GOLD}>{tagA}</Tag>
     </>
   );
 }
@@ -140,10 +140,15 @@ const CATEGORY_COMPONENTS: Record<string, () => ReactElement> = {
   "Rail & Transit": () => <StationModel spin={false} />,
   Aviation: AviationModel,
   "Cultural & Landmark": LandmarkModel,
+  Commercial: () => <LandmarkModel tagA="Commercial Tower" tagB="Office HQ" />,
   Residential: ResidentialModel,
+  "Ports & Marine": () => <IndustrialModel tagA="Ports & Marine" tagB="Port Infrastructure" />,
+  "Roads & Infrastructure": () => <IndustrialModel tagA="Roads & Infrastructure" tagB="Highway Works" />,
+  Energy: () => <IndustrialModel tagA="Energy" tagB="LOD 350–500" />,
+  Landscape: () => <LandscapeModel tagA="Landscape" />,
+  Healthcare: () => <ResidentialModel tagA="Healthcare Facility" tagB="Clinical Building" />,
+  Hospitality: () => <ResidentialModel tagA="Hospitality" tagB="Resort Development" />,
   Heritage: HeritageModel,
-  "Energy & Industrial": IndustrialModel,
-  "Landscape & Healthcare": LandscapeModel,
 };
 
 export default function CategoryModel({ category, spin = true }: { category: string; spin?: boolean }) {

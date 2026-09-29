@@ -15,7 +15,7 @@ import { experience, profile, projects } from "../data/content";
 const HERO_STATS = [
   { value: 15, suffix: "+", label: "Years in BIM & VDC" },
   { value: projects.length, suffix: "", label: "Landmark projects" },
-  { value: profile.basedCountries.length, suffix: "", label: "Countries based in" },
+  { value: profile.basedCountries.length, suffix: "", label: "Countries worked in" },
 ];
 
 const GLANCE_STATS = [
@@ -171,7 +171,7 @@ export default function Home() {
 
             <Reveal delay={0.1}>
               <h2 className="section-heading">
-                From Jr. Architect in Kolkata to BIM Manager across four countries.
+                From architectural modelling to client BIM leadership across six countries.
               </h2>
               <p className="mt-4 leading-relaxed text-mist-300">
                 Prithijit builds and leads the BIM function inside design consultancies and on-site

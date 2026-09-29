@@ -20,8 +20,8 @@ export default function About() {
       <PageHeader
         code="01"
         eyebrow="About"
-        title="Fifteen years bridging architectural vision and buildable BIM delivery."
-        description="From a drafting table in Kolkata to directing BIM strategy for metro networks, nuclear plants and heritage forts — the long version."
+        title="My journey from architecture to BIM leadership"
+        description="A curiosity about designing in three dimensions became a career connecting design, construction and the life of a building."
       />
 
       <section className="pb-20">
